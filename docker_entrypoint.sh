@@ -17,7 +17,6 @@ if [ "$alle_env" = 'dev' ] || [ "$alle_env" = 'stage' ] || [ "$alle_env" = 'demo
         values_files+=(-f "values-$region.yaml")
     fi
 
-
     /usr/local/bin/helm template "$2" "$chart_path" "${values_files[@]}"
 else
     exec "$@"
