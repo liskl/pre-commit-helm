@@ -4,5 +4,5 @@ set -x
 
 ls -la /usr/local/bin
 
-exec "/usr/local/bin/helm template $@"
+/usr/local/bin/helm template "$@"
 
