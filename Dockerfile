@@ -16,6 +16,10 @@ RUN curl -L --output /tmp/helm-${helm_version}-linux-amd64.tar.gz https://get.he
   && mkdir ~/.ssh \
   && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
+RUN mkdir -p /.cache \
+  && chmod -R 775 /.cache \
+  && chown -R helm /.cache
+
 #USER helm
 WORKDIR /src
 
