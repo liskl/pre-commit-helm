@@ -2,12 +2,11 @@
 set -e
 set -x
 
-# parseargs is a function that parses the arguments passed to the script
-# and sets the variables accordingly
+read -ra array < <(printf "%s\n" "$1")
 
-alle_env="$1"
-region="$2"
-chart_name="$3"
+alle_env="${array[0]}"
+region="${array[1]}"
+chart_name="${array[2]}"
 
 if [ "$alle_env" = 'dev' ] || [ "$alle_env" = 'stage' ] || [ "$alle_env" = 'demo' ] || [ "$alle_env" = 'prod' ]; then
     chart_path="/src/deploy/chart/$2"
