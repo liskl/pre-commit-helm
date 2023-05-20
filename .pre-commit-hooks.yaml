@@ -1,7 +1,7 @@
 -   id: helm
     name: helm (via docker)
     description: helm
-    entry: docker_entrypoint.sh
+    entry: /docker_entrypoint.sh
     language: docker
     args: [ls -alh]
     #args: [helm template test ./deploy/charts/test -f deploy/charts/test/values.yaml']
