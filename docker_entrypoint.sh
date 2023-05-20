@@ -2,4 +2,5 @@
 set -e
 set -x
 
-exec "$@"
+exec "/usr/local/bin/helm template $@"
+
