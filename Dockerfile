@@ -4,7 +4,7 @@ ENV helm_version v3.12.0
 ENV helm_sha256 da36e117d6dbc57c8ec5bab2283222fbd108db86c83389eebe045ad1ef3e2c3b
 
 RUN adduser helm -D \
-  && apk add curl git openssh file \
+  && apk add curl git openssh file bash \
   && git config --global url.ssh://git@github.com/.insteadOf https://github.com/
 
 RUN curl -L --output /tmp/helm-${helm_version}-linux-amd64.tar.gz https://get.helm.sh/helm-${helm_version}-linux-amd64.tar.gz \
@@ -20,6 +20,12 @@ RUN mkdir -p /.cache \
   && chmod -R 777 /.cache \
   && chown -R helm /.cache
 
+COPY docker_entrypoint.sh /docker_entrypoint.sh
+
+RUN chown root:root /docker_entrypoint.sh \
+  && chmod +x /docker_entrypoint.sh 
+
 USER helm
 WORKDIR /src
 
+ENTRYPOINT /docker_entrypoint.sh
