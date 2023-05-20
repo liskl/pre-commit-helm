@@ -2,6 +2,4 @@
 set -e
 set -x
 
-ls -alh /
-
 exec "$@"
