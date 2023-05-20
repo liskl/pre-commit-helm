@@ -28,4 +28,4 @@ RUN chown root:root /docker_entrypoint.sh \
 USER helm
 WORKDIR /src
 
-ENTRYPOINT /docker_entrypoint.sh
+#ENTRYPOINT /docker_entrypoint.sh
