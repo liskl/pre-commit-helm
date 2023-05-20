@@ -3,7 +3,6 @@
     description: helm
     entry: /docker_entrypoint.sh
     language: docker
-    args: [ls -alh /]
-    #args: [helm template test ./deploy/charts/test -f deploy/charts/test/values.yaml']
+    args: [helm template test ./deploy/charts/test -f deploy/charts/test/values.yaml']
     always_run: true
     pass_filenames: false
