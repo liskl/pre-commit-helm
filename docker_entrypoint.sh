@@ -4,4 +4,6 @@ set -x
 
 ls -la /usr/local/bin
 
+ls -alh /src
+
 /usr/local/bin/helm template $@
