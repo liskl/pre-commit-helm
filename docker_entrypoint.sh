@@ -4,6 +4,4 @@ set -x
 
 ls -alh /
 
-echo -ne "${@}\n"
-
 exec "$@"
