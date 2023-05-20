@@ -1,8 +1,0 @@
--   id: helm
-    name: helm (via docker)
-    description: helm
-    entry: helm template 
-    language: docker
-    args: ['deploy/charts/<charname>'  '-f deploy/charts/<charname>/values.yaml']
-    always_run: true
-    pass_filenames: false
