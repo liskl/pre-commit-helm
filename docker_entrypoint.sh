@@ -10,7 +10,11 @@ chart_name="${array[2]}"
 
 if [ "$alle_env" = 'dev' ] || [ "$alle_env" = 'stage' ] || [ "$alle_env" = 'demo' ] || [ "$alle_env" = 'prod' ]; then
     chart_path="/src/deploy/chart/$chart_name"
-    values_files=(-f $chart_path/values.yaml -f "$chart_path/values-$alle_env.yaml")
+    values_files=(-f $chart_path/values.yaml)
+
+    if [ -f "$chart_path/values-$alle_env.yaml" ]; then
+        values_files+=(-f "$chart_path/values-$alle_env.yaml")
+    fi
 
     if [ -f "$chart_path/values-$region.yaml" ]; then
         values_files+=(-f "$chart_path/values-$region.yaml")
