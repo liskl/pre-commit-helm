@@ -1,7 +1,7 @@
 -   id: helm
     name: helm (via docker)
     description: helm
-      #entry: helm template 
+    entry: docker_entrypoint.sh
     language: docker
     args: [helm template test ./deploy/charts/test -f deploy/charts/test/values.yaml']
     always_run: true
