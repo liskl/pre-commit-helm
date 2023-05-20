@@ -3,6 +3,6 @@
     description: helm
     entry: helm template 
     language: docker
-    args: [./deploy/charts/test -f deploy/charts/test/values.yaml']
+      #args: [./deploy/charts/test -f deploy/charts/test/values.yaml']
     always_run: true
     pass_filenames: false
