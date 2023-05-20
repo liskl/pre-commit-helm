@@ -7,5 +7,6 @@ pwd
 ls -la /usr/local/bin
 
 ls -alh /src
+ls -alh /src/deploy
 
 /usr/local/bin/helm template $@
